@@ -44,11 +44,11 @@
     <nav class="navbar navbar-expand-lg navbar-dark shadow-0 sticky-lg-top z10 navbg">
         <div class="container">
             <!-- Toggle button -->
-            <button type="button" class="navbar-toggler" type="button" data-mdb-toggle="collapse"
+            <!-- <button type="button" class="navbar-toggler" type="button" data-mdb-toggle="collapse"
                 data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
                 <i class="fas fa-bars"></i>
-            </button>
+            </button> -->
             <!-- Collapsible wrapper -->
             <div class="collapse navbar-collapse d-flex align-items-center" id="navbarSupportedContent">
                 <!-- Navbar brand -->
@@ -75,10 +75,8 @@
                     <form action="">
                         <button type="button" class="btn-close float-end" data-bs-dismiss="modal"
                             aria-label="Close"></button>
-                        <h3 class="text-start  text-dark spacetext">Login to Account</h3>
-                        <p class="fw-light text-secondary py-3">Lorem ipsum, dolor sit amet consectetur adipisicing
-                            elit.
-                            Earum, aliquam.</p>
+                        <h3 class="text-start  text-dark spacetext py-3">Login to Account</h3>
+
                         <div class="loginmodal">
                             <div class="d-grid mt-2">
                                 <label for="login" class="spacetext text-dark flogintext">E-mail</label>
@@ -100,10 +98,13 @@
                                     <label class="form-check-label" for="exampleCheck1">Remember me</label>
                                 </div>
                                 <div class="text-center mt-3">
-                                    <input type="submit" class="btn rounded-pill btn-login border-0 px-4 "
+                                    <input type="submit" class="w-100 btn rounded-3 btn-login border-0 px-4 "
                                         value="Login">
-                                    </button>
                                 </div>
+                                <h4 class="text-center fw-semibold py-3">OR</h4>
+
+                                <a href="" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#mobileotp">Login
+                                    with OTP</a>
                                 <hr class="border border-2 border-secondary">
                                 <div class="text-center d-flex justify-content-center align-items-baseline">
                                     <h6 class="text-dark ">Create new account ?</h6>&ensp;
@@ -118,26 +119,147 @@
                 </div>
             </div>
         </div>
-        <div class="modal fade" id="register">
+        <div class="modal fade" id="register" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog mt-5">
-                <div class="modal-content p-5 border-0 rounded">
+                <div class="modal-content py-3 px-4 border-0 rounded">
                     <form action="">
                         <button type="button" class="btn-close float-end" data-bs-dismiss="modal"
                             aria-label="Close"></button>
-                        <h3 class="text-start  text-dark spacetext">Register New Account</h3>
+                        <h3 class="text-start  text-dark spacetext py-3">Register New Account</h3>
 
-                        <div class="registermodal">
-                            <div class="d-grid mt-3">
-                                <span class="input-group-text" id="basic-addon1">@</span>
-                                <input type="text" class="form-control" placeholder="Username" aria-label="Username"
-                                    aria-describedby="basic-addon1">
+                        <div class="Registermodal">
+                            <div class="row">
+                                <div class="col">
+                                    <label for="login" class="spacetext text-dark flogintext">First Name</label>
+                                    <input type="text" class="form-control bg-semilight" placeholder="First name"
+                                        aria-label="First name" required>
+                                </div>
+                                <div class="col">
+                                    <label for="login" class="spacetext text-dark flogintext">Last Name</label>
+                                    <input type="text" class="form-control bg-semilight" placeholder="Last name"
+                                        aria-label="Last name" required>
+                                </div>
+                                <div class="col-12 mt-3">
+                                    <label for="email" class="spacetext text-dark flogintext">Email</label>
+                                    <input type="email" class="form-control bg-semilight" placeholder="Enter email id">
+                                </div>
+                                <div class="col-12 mt-3">
+                                    <label for="password" class=" spacetext text-dark flogintext">Mobile Number</label>
+                                    <input type="tel" class="form-control bg-semilight"
+                                        placeholder="Enter Mobile Number" required>
+                                </div>
+                                <div class="mt-3">
+                                    <label for="password" class="spacetext text-dark flogintext">Create Password</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control bg-semilight"
+                                            placeholder="set your password" required>
+                                        <span class="input-group-text bg-semilight" id="basic-addon2"><i
+                                                class="bi bi-eye-slash"></i></span>
+                                    </div>
+                                </div>
+
+                                <div class="mt-3">
+                                    <label for="password" class="spacetext text-dark flogintext">Confirm
+                                        Password</label>
+                                    <div class="input-group mb-3">
+                                        <input type="text" class="form-control bg-semilight"
+                                            placeholder="Confirm Password" required>
+                                        <span class="input-group-text bg-semilight" id="basic-addon2"><i
+                                                class="bi bi-eye-slash"></i></span>
+                                    </div>
+                                </div>
+                                <div class="text-center mt-3">
+                                    <input type="submit" class="w-100 btn rounded-3 btn-login border-0 px-4 "
+                                        value="Create Account">
+                                </div>
+                            </div>
+
+
+                            <hr class="border border-2 border-secondary">
+                            <div class="text-center d-flex justify-content-center align-items-baseline">
+                                <h6 class="text-dark ">Already have Account ?</h6>&ensp;
+                                <a type="button" class="text-primary nav-link" data-bs-toggle="modal"
+                                    data-bs-target="#login">login</a>
                             </div>
                         </div>
                 </div>
 
+
                 </form>
             </div>
         </div>
+    </div>
+    <div class="modal fade" id="mobileotp">
+        <div class="modal-dialog mt-5">
+            <div class="modal-content p-5 border-0 rounded">
+                <form action="">
+                    <button type="button" class="btn-close float-end" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                    <h3 class="text-start  text-dark spacetext">OTP Login</h3>
+
+                    <div class="registermodal mt-2">
+
+
+                        <div class="d-flex flex-column mt-4">
+                            <div class="d-flex flex-row">
+                                <span class="input-group-text bg-semilight  rounded-0 rounded-start border-0"
+                                    id="basic-addon1"><i class="bi bi-tablet text-primary"></i></span>
+                                <input type="text" class="form-control bg-semilight rounded-0 rounded-end"
+                                    placeholder="Enter Mobile Number" aria-label="Username"
+                                    aria-describedby="basic-addon1">
+                            </div>
+                            <p class="text-secondary pt-3 mobpara">Enter Valid Mobile Number to send OTP</p>
+                        </div>
+
+                        <a type="button" class="btn btn-dark w-100 mt-2" data-bs-toggle="modal"
+                            data-bs-target="#verifyotp">send OTP&nbsp;<i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="modal fade" id="verifyotp">
+        <div class="modal-dialog mt-5">
+            <div class="modal-content p-5 border-0 rounded">
+                <form action="">
+                    <button type="button" class="btn-close float-end" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                    <h3 class="text-dark">OTP Verification</h3>
+                    <div class="row d-flex align-items-center mt-2">
+                        <div class="col-md-6">
+                            <h4 class="text-dark fw-normal">Enter 4 Digit OTP sent on 98******45</h4>
+                            <a href="" class="text-primary nav-link" data-bs-toggle="modal"
+                                data-bs-target="#mobileotp">change mobile Number</a>
+                        </div>
+                        <div class="col-md-6">
+                            <img src="./assets/image/otp.jpg" class="img-fluid" alt="otp">
+                        </div>
+                        <div class="col-md-12">
+                            <div class="d-flex justify-content-center mt-2">
+                                <input type="text" name="otp[0]" class="otp-field  bg-semilight text-center"
+                                    oninput="digitValidate(this, 1)" maxlength="1" placeholder=" - " id="firstInput" required>
+                                <input type="text" name="otp[1]" class="otp-field  bg-semilight text-center"
+                                    oninput="digitValidate(this, 2)" maxlength="1" placeholder=" - "required>
+                                <input type="text" name="otp[2]" class="otp-field  bg-semilight text-center"
+                                    oninput="digitValidate(this, 3)" maxlength="1" placeholder=" - " required>
+                                <input type="text" name="otp[3]" class="otp-field  bg-semilight text-center"
+                                    oninput="digitValidate(this, 4)" maxlength="1" placeholder=" - " required>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="countdown">
+                        <div class="mt-3 text-center text-secondary">Haven't received OTP ?</div>
+                        <h4 class="text-dark fw-normal text-center py-2" id="timer">02:00</h4>
+                    </div>
+                    <button class="btn btn-dark w-100 mt-2">verify</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
     </div>
     <div class="modal fade" id="fpass">
         <div class="modal-dialog modal-dialog-centered mt-5">
@@ -172,33 +294,8 @@
                                     id="basic-addon1"><i class="bi bi-search"></i></span>
                                 <input type="text" class="form-control  rounded-0  border-0 treatmentinp" placeholder="Any treatment or venue
                         " aria-label="Username" aria-describedby="basic-addon1" type="search" aria-label="Search"
-                                    data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                   id="buttonModal">
                             </span>
-                            <!-- <div class="popup">
-                                <div class="modal fade" id="exampleModal" tabindex="-1"
-                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog modal-fullscreen-xxl-down">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h1 class="modal-title fs-5" id="exampleModal">Modal title</h1>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                    aria-label="Close"></button>
-                                            </div>
-                                            <div class="modal-body">
-                                                ...
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary"
-                                                    data-bs-dismiss="modal">Close</button>
-                                                <button type="button" class="btn btn-primary">Save changes</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> -->
-
-
-
                             <div class="dropdown-menu px-2 py-3" id="firstDropdown">
                                 <h6 class="text-dark fw-semibold mb-3">Top Categories</h6>
                                 <ul class="list-group list-group-horizontal w-100">
@@ -236,7 +333,8 @@
                                 <span class="bg-white p-3"><i class="bi bi-geo-alt fs-5"></i></span>
                                 <input type="text"
                                     class="form-control p-2 border-0 border-end rounded-start rounded-pill locationinp"
-                                    placeholder="Current Location" aria-label="Server">
+                                    placeholder="Current Location" aria-label="Server"  aria-describedby="basic-addon1" type="search" aria-label="Search"
+                                    id="locationModal">
                             </span>
 
                             <div class="dropdown-secmenu px-2 py-3" id="secondDropdown">
@@ -247,7 +345,7 @@
                             </div>
                             <div class="searchbtn position-relative z9">
                                 <button
-                                    class="btn btn-dark rounded-pill position-absolute end-0 me-3 px-3">search</button>
+                                    class="btn btn-dark rounded-pill position-absolute end-0  me-3 px-3">search</button>
                             </div>
 
                         </div>
@@ -264,10 +362,11 @@
 
         <section class="recommended my-4">
             <div class="container">
-                <h3 class="text-dark my-2">Recommended</h3>
+                <h3 class="text-dark text-start text-center text-md-start my-3">Recommended</h3>
                 <div class="row slider d-flex align-items-stretch">
                     <div class="col-lg-3">
-                        <div class="card mcard shadow-sm h-100 rounded-3">
+                        <div class="card mcard shadow-sm h-100 rounded-3 position-relative">
+                          
                             <div class="cardimage">
                                 <img src="./assets/image/salon1.jpg" class="img-fluid" alt="salon2">
                             </div>
@@ -289,6 +388,7 @@
 
                                 </div>
                             </div>
+                            <a href="https://www.fresha.com/" class="stretched-link"></a>
                         </div>
                     </div>
                     <div class="col-lg-3">
@@ -448,7 +548,7 @@
         </section>
         <section class="recommended my-4">
             <div class="container">
-                <h3 class="text-dark my-2">New To Fresha</h3>
+                <h3 class="text-dark text-start text-center text-md-start my-3">New To Fresha</h3>
                 <div class="row slider d-flex align-items-stretch">
                     <div class="col-lg-3">
                         <div class="card mcard shadow-sm h-100 rounded-3">
@@ -635,7 +735,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
-                        <div class="d-flex flex-row align-items-center mt-5">
+                        <div
+                            class="d-flex flex-row align-items-center justify-content-start justify-content-center justify-content-md-start mt-5">
                             <div class="fw-bold">
                                 Available on
                             </div>
@@ -646,20 +747,21 @@
                         </div>
 
                         <div class="name text-start">
-                            <h1 class="text-capitalize">download the <br> Salonkatta <br> app</h1>
+                            <h1 class="text-capitalize text-dark text-start text-center text-md-start">download the <br>
+                                Salonkatta <br> app</h1>
                         </div>
-                        <div class="text-start my-4">
+                        <div class="text-start text-center text-md-start my-4">
                             <h4 class="fw-light fs-4">Book unforgettable beauty and wellness experiences with the
                                 Salonkatta
                                 mobile app</h4>
                         </div>
-                        <div class="qrcode text-start">
+                        <div class="qrcode text-start text-center text-md-start">
                             <img src="./assets/image/qr.png" class="img-fluid border rounded-2 p-1" width="150px"
                                 alt="qrcode">
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <div class="d-flex align-items-center mt-4">
+                        <div class="d-flex align-items-center mt-4 mt-0 mt-md-4">
                             <div class="mobileview" data-aos="fade-up" data-aos-duration="500">
                                 <img src="./assets/image/mbscreen.jpg" class="img-fluid" width="250px" alt="mobileview">
                             </div>
@@ -672,7 +774,7 @@
 
         <section class="my-5">
             <div class="container">
-                <h3 class="text-dark py-3">Reviews</h3>
+                <h3 class="text-dark text-start text-center text-md-start py-3">Reviews</h3>
                 <div class="row reviewSlide d-flex align-items-stretch">
 
                     <div class="col-lg-3">
@@ -925,7 +1027,7 @@
 
         <section class="whychoose my-5">
             <div class="container">
-                <h3 class="text-dark py-4">Why Choose Us</h3>
+                <h3 class="text-dark text-start text-center text-md-start py-4">Why Choose Us</h3>
                 <div class="row mt-5">
                     <div class="col-lg-3 col-md-6 col-12">
                         <div class="item d-flex justify-content-center align-items-center m-auto">
@@ -979,16 +1081,17 @@
                 <div class="row d-flex align-items-center">
                     <div class="col-md-5">
                         <div class="buisnessHead">
-                            <h1 class="text-dark">Salonkatta For Buisness</h1>
-                            <div class="text-start my-4">
+                            <h1 class="text-dark text-start text-center text-md-start">Salonkatta For Buisness</h1>
+                            <div class="text-start text-center text-md-start my-4">
                                 <h4 class="fw-light fs-4">Supercharge your business for free with the world's top
                                     booking platform for salons and spas. Independently voted no. 1 by industry
                                     professionals.</h4>
                             </div>
-                            <div class="my-4">
+                            <div class="my-4 text-start text-center text-md-start">
                                 <button class="btn btn-dark px-4 py-3 rounded-pill">Find out more</button>
                             </div>
-                            <div class="d-flex flex-row align-items-center mt-3 pb-5">
+                            <div
+                                class="d-flex flex-row align-items-center justify-content-start justify-content-center justify-content-md-start mt-3 pb-5">
                                 <i class="fas fa-star mx-2"></i>
                                 <i class="fas fa-star me-2"></i>
                                 <i class="fas fa-star me-2"></i>
@@ -1006,10 +1109,11 @@
 
         <section class="bycity my-5">
             <div class="container">
-                <h3 class="text-dark">Browse by City</h3>
+                <h3 class="text-dark text-start text-center text-md-start">Browse by City</h3>
                 <div class="row py-4">
                     <div id="tablist">
-                        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                        <ul class="nav nav-pills mb-3 justify-content-start justify-content-center justify-content-md-start"
+                            id="pills-tab" role="tablist">
                             <li class="nav-item me-3" role="presentation">
                                 <a class="nav-link active" id="pills-mumbai-tab" data-bs-toggle="pill"
                                     data-bs-target="#pills-mumbai" type="button" role="tab">Mumbai</a>
@@ -1567,6 +1671,77 @@
         </section>
 
     </main>
+    <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen-xxl-down">
+            <div class="modal-content">
+                <div class="text-end p-2">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h3 class="text-dark">Treatment or Venue</h3>
+                    <div class="input-group my-3">
+                        <span class="input-group-text bg-semilight" id="basic-addon2"><i class="bi bi-search"></i></span>
+                        <input type="search" class="form-control bg-semilight py-2" name="" id="" placeholder="Any Treatment or Venue">
+                    </div>
+                    <h6 class="text-dark fw-semibold mb-3">Top Categories</h6>
+                    <ul class="list-group list-group-horizontal w-100">
+                        <a href=""
+                            class="btn btn-light w-50 d-flex flex-row justify-content-between m-1 py-3 border">Hair
+                            <div class="ctgimage">
+                                <img src="./assets/image/icons/hairdryer.png" height="25px" alt="hair">
+                            </div>
+                        </a>
+                        <a href=""
+                            class="btn btn-light w-50 d-flex flex-row justify-content-between m-1 py-3 border">Face
+                            <div class="ctgimage">
+                                <img src="./assets/image/icons/eye.png" height="25px" alt="hair">
+                            </div>
+                        </a>
+                    </ul>
+                    <ul class="list-group list-group-horizontal w-100">
+                        <a href=""
+                            class="btn btn-light w-50 d-flex flex-row justify-content-between m-1 py-3 border">Nail
+                            <div class="ctgimage">
+                                <img src="./assets/image/icons/nail.png" height="25px" alt="nail">
+                            </div>
+                        </a>
+                        <a href=""
+                            class="btn btn-light w-50 d-flex flex-row justify-content-between m-1 py-3 border">Hair
+                            Removal
+                            <div class="ctgimage">
+                                <img src="./assets/image/icons/hair-cutting.png" height="25px" alt="hair">
+                            </div>
+                        </a>
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="placeModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen-xxl-down">
+            <div class="modal-content">
+                <div class="text-end p-2">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h3 class="text-dark">Location</h3>
+                    <div class="input-group my-3">
+                        <span class="input-group-text bg-semilight" id="basic-addon2"><i class="bi bi-geo-alt"></i></span>
+                        <input type="search" class="form-control bg-semilight py-2" name="" id="" placeholder="current location">
+                    </div>
+                    <a class="btn btn-light text-primary text-start w-100 py-3"><i
+                        class="fas fa-location-arrow me-2"></i>current Location</a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
@@ -1579,6 +1754,7 @@
     <script>
         AOS.init();
     </script>
+
     <script>
         $('.slider').slick({
             dots: true,
@@ -1656,8 +1832,44 @@
             }
         });
     </script>
+    <script>
+        const focusModal = document.getElementById('verifyotp');
+        const focusInput = document.getElementById('firstInput');
 
-    <script src="./assets/js/main.js"></script>
+        focusModal.addEventListener('shown.bs.modal', () => {
+            focusInput.focus();
+        })
+    </script>
+    <script>
+        function digitValidate(e, i) {
+            e.value = e.value.replace(/[^0-9]/g, '');
+            let eall = document.querySelectorAll('.otp-field');
+            if (eall[i - 1].value != '' && eall[i]) {
+                eall[i].focus();
+            } else if (eall[i - 1].value == '' && eall[i - 2]) {
+                eall[i - 2].focus();
+            }
+        }
+        $(document).ready(function () {
+            let wait = 119; // wait until (time in seconds)
+            const resend = setInterval(() => {
+                if (wait > 0) {
+                    let m = wait / 60;
+                    let s = (wait - (Math.floor(m) * 60));
+                    $('#timer').html(`Wait for  ${('0' + Math.floor(m)).slice(-2)}:${('0' + s).slice(-2)}`);
+                    wait--;
+                } else {
+                    clearInterval(resend);
+                    $('#timer').html(`<button name="resend_otp" type="submit" form="resend-otp-form" class="btn btn-sm btn-link text-decoration-none">Resend OTP</button>`);
+                }
+            }, 1000);
+        });
+    </script>
+
+   
+
+
+    <script src="./assets/js/myscript.js"></script>
 </body>
 
 </html>
